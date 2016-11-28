@@ -1,0 +1,25 @@
+<?php
+
+$title = 'Agregar configuración papercut';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+$form->setAttribute('action', $this->url('configpapercut', ['action' => 'add']));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('idConfigPapercut'));
+echo $this->formRow($form->get('ip'));
+echo $this->formRow($form->get('puerto'));
+echo $this->formRow($form->get('releaseStationID'));
+echo $this->formHidden($form->get('authDetails'));
+echo $this->formRow($form->get('releaseStationType'));
+echo $this->formRow($form->get('protocolVersion'));
+echo $this->formRow($form->get('rutaReleaseStation'));
+echo $this->formHidden($form->get('rutaUserAPI'));
+echo $this->formRow($form->get('rutaPrinterStatus'));
+echo $this->formRow($form->get('adminContrasena'));
+echo $this->formRow($form->get('authorization'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();

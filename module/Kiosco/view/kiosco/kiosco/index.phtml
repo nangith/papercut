@@ -1,0 +1,27 @@
+<?php
+
+$title = 'Kiosco';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<table class="table">
+<tr>
+    <th>ID</th>
+    <th>NOMBRE</th>
+    <th>RUTA</th>
+    <th>ID IMPRESORA</th>
+    <th>NOMBRE IMPRESORA</th>
+    <th>ID CONFIG PAPERCUT</th>
+</tr>
+<?php foreach ($kioscos as $value) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($value->idKiosco) ?></td>
+        <td><?= $this->escapeHtml($value->nombre) ?></td>
+        <td><?= $this->escapeHtml($value->ruta) ?></td>
+        <td><?= $this->escapeHtml($value->idImpresora) ?></td>
+        <td><?= $this->escapeHtml($value->nombreImpresora) ?></td>
+        <td><?= $this->escapeHtml($value->idConfigPapercut) ?></td>
+    </tr>
+<?php endforeach; ?>
+</table>

@@ -1,0 +1,23 @@
+<?php
+
+$title = 'Config Kiosco';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<table class="table">
+<tr>
+    <th>ID</th>
+    <th>NOMBRE</th>
+    <th>VALOR</th>
+    <th>ID KIOSCO</th>
+</tr>
+<?php foreach ($config as $value) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($value->idConfigKiosco) ?></td>
+        <td><?= $this->escapeHtml($value->nombreConfig) ?></td>
+        <td><?= $this->escapeHtml($value->valor) ?></td>
+        <td><?= $this->escapeHtml($value->idKiosco) ?></td>
+    </tr>
+<?php endforeach; ?>
+</table>

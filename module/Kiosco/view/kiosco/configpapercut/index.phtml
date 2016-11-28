@@ -1,0 +1,39 @@
+<?php
+
+$title = 'Config Papercut';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<table class="table">
+<tr>
+    <th>ID</th>
+    <th>IP</th>
+    <th>PUERTO</th>
+    <th>RELEASE STATION ID</th>
+    <th>AUTH DETAILS</th>
+    <th>RELEASE STATION TYPE</th>
+    <th>PROTOCOL VERSION</th>
+    <th>RUTA RELEASE STATION</th>
+    <th>RUTA USER API</th>
+    <th>RUTA PRINTER STATUS</th>
+    <th>PASSWORD</th>
+    <th>AUTHORIZATION</th>
+</tr>
+<?php foreach ($config as $value) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($value->idConfigPapercut) ?></td>
+        <td><?= $this->escapeHtml($value->ip) ?></td>
+        <td><?= $this->escapeHtml($value->puerto) ?></td>
+        <td><?= $this->escapeHtml($value->releaseStationID) ?></td>
+        <td><?= $this->escapeHtml($value->authDetails) ?></td>
+        <td><?= $this->escapeHtml($value->releaseStationType) ?></td>
+        <td><?= $this->escapeHtml($value->protocolVersion) ?></td>
+        <td><?= $this->escapeHtml($value->rutaReleaseStation) ?></td>
+        <td><?= $this->escapeHtml($value->rutaUserAPI) ?></td>
+        <td><?= $this->escapeHtml($value->rutaPrinterStatus) ?></td>
+        <td><?= $this->escapeHtml($value->adminContrasena) ?></td>
+        <td><?= $this->escapeHtml($value->authorization) ?></td>
+    </tr>
+<?php endforeach; ?>
+</table>

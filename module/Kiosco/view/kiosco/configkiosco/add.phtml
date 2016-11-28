@@ -1,0 +1,17 @@
+<?php
+
+$title = 'Agregar configuración kiosco';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+$form->setAttribute('action', $this->url('configkiosco', ['action' => 'add']));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('idConfigKiosco'));
+echo $this->formRow($form->get('nombreConfig'));
+echo $this->formRow($form->get('valor'));
+echo $this->formRow($form->get('idKiosco'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();

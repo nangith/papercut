@@ -1,0 +1,19 @@
+<?php
+
+$title = 'Agregar kiosco';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+$form->setAttribute('action', $this->url('kiosco', ['action' => 'add']));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('idKiosco'));
+echo $this->formRow($form->get('nombre'));
+echo $this->formRow($form->get('ruta'));
+echo $this->formRow($form->get('idImpresora'));
+echo $this->formRow($form->get('nombreImpresora'));
+echo $this->formRow($form->get('idConfigPapercut'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();

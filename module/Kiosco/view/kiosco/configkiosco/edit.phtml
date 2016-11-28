@@ -1,0 +1,42 @@
+<?php
+
+$title = 'Editar Kiosco';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+$nombre = $form->get('nombre');
+$nombre->setAttribute('class', 'form-control');
+$nombre->setAttribute('placeholder', 'Nombre configuración');
+
+$ruta = $form->get('ruta');
+$ruta->setAttribute('class', 'form-control');
+$ruta->setAttribute('placeholder', 'Artist');
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('kiosco', [
+    'action' => 'edit',
+    'idKiosco'     => $idKiosco,
+]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<div class="form-group">
+    <?= $this->formLabel($nombre) ?>
+    <?= $this->formElement($nombre) ?>
+    <?= $this->formElementErrors()->render($nombre, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($ruta) ?>
+    <?= $this->formElement($ruta) ?>
+    <?= $this->formElementErrors()->render($ruta, ['class' => 'help-block']) ?>
+</div>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('idKiosco'));
+echo $this->form()->closeTag();
